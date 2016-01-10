@@ -13,13 +13,16 @@ const homeTemplate = `
 		<title>Stock quant analysis tools</title>
 
 		<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<script src="https://fgnass.github.io/spin.js/spin.min.js"></script>
 
 		<script src="https://github.com/brehaut/color-js/raw/master/color.js"></script>
 
 		<script src="https://raw.githubusercontent.com/xoxco/jQuery-Tags-Input/master/src/jquery.tagsinput.js"></script>
-		<link rel="stylesheet" href="https://raw.githubusercontent.com/xoxco/jQuery-Tags-Input/master/src/jquery.tagsinput.css"></link>
+		<link rel="stylesheet" href="/static/3rdparty/jquery.tagsinput.css"></link>
 
 		<script src="/static/home.js"></script>
+		<link rel="stylesheet" href="/static/home.css"></link>
+		<link href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC|IM+Fell+English:400,400italic' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<h2>Correlation calculator</h2>
@@ -32,7 +35,18 @@ const homeTemplate = `
 		between 2015-01-01 and 2015-12-31.
 		</p>
 
-		<input id="symbols" value="YHOO MSFT GOOG F">
+		<p>
+		If nothing seems to happen after you press the button, try
+		waiting a bit longer. The backend might need to download the
+		stock history from Yahoo, which takes a second or two per
+		symbol. The histories are cached, so the query should be a lot
+		faster the next time.
+		</p>
+
+		<p>
+		Enter symbols, separated by a space:
+		</p>
+		<input id="symbols" value="">
 		<button id="get_correlation">Get correlations</button>
 
 		<div id="correlations">
