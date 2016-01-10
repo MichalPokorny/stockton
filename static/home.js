@@ -139,9 +139,9 @@ var redraw = function() {
 	context.font = '14px Palatino';
 
 	var maximumForceSize = 0;
-	for (var i = 0; i < stocks.length; i++) {
+	for (var i = 0; i < planets.length; i++) {
 		var planetA = planets[i];
-		for (var j = i + 1; j < stocks.length; j++) {
+		for (var j = i + 1; j < planets.length; j++) {
 			var planetB = planets[j];
 			var force = getForceBetweenPlanets(planetA, planetB);
 			var forceSize = Math.sqrt(force[0] * force[0], force[1] * force[1]);
