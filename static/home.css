@@ -36,3 +36,7 @@ div.tagsinput span.tag {
 div.tagsinput input {
 	font-family: Palatino, 'Palatino Linotype', 'Hoefler Text', Times, 'Times New Roman', serif;
 }
+
+#corcanvas {
+	border: 1px solid black;
+}

@@ -49,7 +49,8 @@ const homeTemplate = `
 		Enter symbols, separated by a space:
 		</p>
 		<input id="symbols" value="">
-		<button id="get_correlation">Get correlations</button>
+		<button id="get_correlation">Show correlation matrix</button>
+		<button id="draw_planets">Draw planets</button>
 
 		<div id="correlations">
 		</div>
@@ -60,7 +61,8 @@ const homeTemplate = `
 		The source code of this tool is at
 		<a href="https://github.com/MichalPokorny/stockton">https://github.com/MichalPokorny/stockton</a>.
 		It was built with Go, jQuery,
-		<a href="http://xoxco.com/projects/code/tagsinput/">jQuery-Tags-Input</a>.
+		<a href="http://xoxco.com/projects/code/tagsinput/">jQuery-Tags-Input</a>,
+		<a href="https://github.com/brehaut/color-js">Color.js</a>.
 		</footer>
 	</body>
 </html>
