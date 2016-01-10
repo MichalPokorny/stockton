@@ -5,6 +5,7 @@ import (
 	"net/http"
 )
 
+// TODO: serve from static
 const homeTemplate = `
 <!DOCTYPE html>
 <html>
@@ -18,10 +19,11 @@ const homeTemplate = `
 		<script src="https://github.com/brehaut/color-js/raw/master/color.js"></script>
 
 		<script src="https://raw.githubusercontent.com/xoxco/jQuery-Tags-Input/master/src/jquery.tagsinput.js"></script>
-		<link rel="stylesheet" href="/static/3rdparty/jquery.tagsinput.css"></link>
+		<link rel="stylesheet" href="/static/3rdparty/jquery.tagsinput.css">
+		<link rel="favourite icon" href="//rny.cz/images/favicon.png">
 
 		<script src="/static/home.js"></script>
-		<link rel="stylesheet" href="/static/home.css"></link>
+		<link rel="stylesheet" href="/static/home.css">
 		<link href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC|IM+Fell+English:400,400italic' rel='stylesheet' type='text/css'>
 	</head>
 	<body>

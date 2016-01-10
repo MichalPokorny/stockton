@@ -14,3 +14,25 @@ footer {
 	padding-top: 2em;
 	border-top: 1px dotted #ccc;
 }
+
+#correlations td {
+	text-align: right;
+	width: 3em;
+}
+
+div.tagsinput {
+	border: 1px solid #CCC;
+	background: #FFF;
+	padding: 5px;
+	width: 400px;
+	height: 100px;
+	overflow-y: auto;
+}
+
+div.tagsinput span.tag {
+	font-family: Palatino, 'Palatino Linotype', 'Hoefler Text', Times, 'Times New Roman', serif;
+}
+
+div.tagsinput input {
+	font-family: Palatino, 'Palatino Linotype', 'Hoefler Text', Times, 'Times New Roman', serif;
+}
