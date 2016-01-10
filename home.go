@@ -52,13 +52,14 @@ const homeTemplate = `
 		<div id="correlations">
 		</div>
 
-		<p>
+		<footer>
+		Written by <a href="//rny.cz">Michal Pokorný</a>.
 		The data is grabbed from Yahoo Stock API's YQL interface.
 		The source code of this tool is at
 		<a href="https://github.com/MichalPokorny/stockton">https://github.com/MichalPokorny/stockton</a>.
 		It was built with Go, jQuery,
 		<a href="http://xoxco.com/projects/code/tagsinput/">jQuery-Tags-Input</a>.
-		</p>
+		</footer>
 	</body>
 </html>
 `

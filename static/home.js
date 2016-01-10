@@ -96,6 +96,9 @@ $('#get_correlation').click(function() {
 	$.ajax('/correlations?' + query).done(function(correlations) {
 		correlations = JSON.parse(correlations);
 		displayCorrelations(correlations);
+	}).error(function() {
+		alert("Sorry, cannot calculate correlations :(\n\n" +
+			"Maybe try deleting a symbol or something?");
 	});
 });
 
