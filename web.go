@@ -13,10 +13,19 @@ import (
 )
 
 func main() {
+	tmpdir := os.Getenv("OPENSHIFT_TMP_DIR")
+	if tmpdir == "" {
+		tmpdir = "./tmp"
+	}
+	if err := os.MkdirAll(tmpdir, 0755); err != nil {
+		panic(err)
+	}
+	yahoo_stock_api.SetHistoryCachePath(tmpdir)
+
 	http.HandleFunc("/", home)
 
 	// Serve /static.
-	homedir := os.Getenv("OPENSHIFT_HOMEDIR")
+	homedir := os.Getenv("OPENSHIFT_REPO_DIR")
 	if homedir == "" {
 		var err error
 		homedir, err = os.Getwd()
