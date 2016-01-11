@@ -128,6 +128,14 @@ var borderForce = 20.0;
 var tooClose = 50;
 var repulsionConstant = 10;
 
+var getLength = function(x) {
+	return Math.sqrt(x[0] * x[0] + x[1] * x[1]);
+};
+
+var getDistance = function(a, b) {
+	return getLength([a[0] - b[0], a[1] - b[1]]);
+};
+
 var redraw = function() {
 	var canvas = document.getElementById('corcanvas');
 	if (!canvas.getContext) {
@@ -144,7 +152,7 @@ var redraw = function() {
 		for (var j = i + 1; j < planets.length; j++) {
 			var planetB = planets[j];
 			var force = getForceBetweenPlanets(planetA, planetB);
-			var forceSize = Math.sqrt(force[0] * force[0], force[1] * force[1]);
+			var forceSize = getLength(force);
 			if (maximumForceSize < forceSize) {
 				maximumForceSize = forceSize;
 			}
@@ -160,7 +168,7 @@ var redraw = function() {
 			context.moveTo(planetA.x, planetA.y);
 
 			var force = getForceBetweenPlanets(planetA, planetB);
-			var forceSize = Math.sqrt(force[0] * force[0], force[1] * force[1]);
+			var forceSize = getLength(force);
 
 			var color = getCorrelationColor(correlation);
 			var alpha = forceSize / maximumForceSize;
@@ -201,7 +209,7 @@ var getForceBetweenPlanets = function(planetA, planetB) {
 	var attraction = gravitationalConstant * correlation / (distance * distance);
 	if (distance < tooClose) {
 		// Apply springs when too close.
-		attraction -= 1.0 / distance;
+		attraction -= (1.0 / distance) - (1.0 / tooClose);
 		//var closeness = ((tooClose - distance) / tooClose);
 		//attraction -= repulsionConstant * closeness;
 	}
